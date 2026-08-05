@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out;
+}
+.reveal-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal-on-scroll {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 20% 8%;
+    --foreground: 0 0% 98%;
+    --card: 0 20% 8%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 20% 8%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 78% 56%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 16% 12%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 15% 15%;
+    --muted-foreground: 0 10% 70%;
+    --accent: 0 78% 56%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 70% 35%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 15% 18%;
+    --input: 0 15% 18%;
+    --ring: 0 80% 70%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border selection:bg-space-accent/20 selection:text-white;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-space-dark text-foreground antialiased;
+    background-image:
+      radial-gradient(
+        circle at 20% 30%,
+        rgba(239, 68, 68, 0.12) 0%,
+        transparent 30%
+      ),
+      radial-gradient(
+        circle at 80% 70%,
+        rgba(249, 115, 22, 0.08) 0%,
+        transparent 35%
+      );
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-space-dark;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-space-accent/30 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-space-accent/50;
+  }
+
+  section {
+    @apply py-16 px-4 md:py-24 md:px-0;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-xl;
+  }
+
+  .glass-card {
+    @apply glass transition-all duration-300 hover:bg-white/10 hover:shadow-lg hover:shadow-space-accent/5;
+  }
+
+  .cosmic-border {
+    @apply relative before:absolute before:inset-0 before:p-[1px] before:rounded-xl before:bg-gradient-to-tr before:from-space-accent/40 before:to-white/20 before:-z-10;
+  }
+
+  .appear-animation {
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+      opacity 0.6s ease-out,
+      transform 0.6s ease-out;
+  }
+
+  .appear-animation.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
