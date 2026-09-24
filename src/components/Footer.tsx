@@ -18,7 +18,10 @@ const Footer: React.FC = () => {
               <span className="text-space-accent">.</span>
             </a>
             <p className="text-xs sm:text-sm text-gray-300 mt-1.5 sm:mt-2 font-semibold">
-              Full-stack Web Systems Engineer
+              Full-stack Applications & Backend Engineer
+            </p>
+            <p className="text-[10px] sm:text-xs text-gray-500 mt-1 max-w-xs mx-auto md:mx-0">
+              Websites · Mobile & Windows Applications · Backend APIs
             </p>
             <p className="text-[10px] sm:text-xs text-gray-500 mt-1 max-w-xs mx-auto md:mx-0">
               Other interests: Gamer · Technophile · Cybersecurity ·
