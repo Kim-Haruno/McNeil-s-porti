@@ -8,7 +8,6 @@ import {
   Loader2,
   Send,
 } from "lucide-react";
-import emailjs from "@emailjs/browser";
 import { useToast } from "@/hooks/use-toast";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
@@ -58,41 +57,26 @@ const Contact: React.FC = () => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
   };
 
-  const saveToLocalStorage = () => {
-    try {
-      const submissions = JSON.parse(
-        localStorage.getItem("contactSubmissions") || "[]",
-      );
-      submissions.push({
-        ...formData,
-        date: new Date().toISOString(),
-      });
-      localStorage.setItem("contactSubmissions", JSON.stringify(submissions));
-    } catch (error) {
-      console.error("Error saving to local storage:", error);
-    }
-  };
-
   const sendEmail = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSending(true);
     setSuccess(false);
 
     try {
-      saveToLocalStorage();
+      const body = new URLSearchParams({
+        "form-name": "contact",
+        ...formData,
+      }).toString();
 
-      await emailjs.send(
-        "service_aj6gldg",
-        "template_2hrl3bb",
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          from_phone: formData.phone,
-          subject: formData.subject,
-          message: formData.message,
-        },
-        "jwAocflEQAnOt0cJQ",
-      );
+      const response = await fetch("/__forms.html", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body,
+      });
+
+      if (!response.ok) {
+        throw new Error(`Form submission failed with status ${response.status}`);
+      }
 
       setSuccess(true);
       setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
@@ -102,7 +86,7 @@ const Contact: React.FC = () => {
         description: "Thank you for reaching out. I'll get back to you soon.",
       });
     } catch (error) {
-      console.error("Email sending error:", error);
+      console.error("Message sending error:", error);
       toast({
         title: "Message failed",
         description:
