@@ -123,10 +123,10 @@ const categoryConfig: Record<
     dotColor: "bg-blue-400",
   },
   frontend: {
-    color: "bg-purple-500/20 border-purple-500/50",
+    color: "bg-rose-500/20 border-rose-500/50",
     label: "Frontend",
-    textColor: "text-purple-400",
-    dotColor: "bg-purple-400",
+    textColor: "text-rose-400",
+    dotColor: "bg-rose-400",
   },
   backend: {
     color: "bg-green-500/20 border-green-500/50",
@@ -264,7 +264,7 @@ const TechStack: React.FC = () => {
     >
       {/* Ambient background blobs */}
       <div className="absolute inset-0 overflow-hidden opacity-10 pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-32 sm:w-48 md:w-64 h-32 sm:h-48 md:h-64 bg-purple-600 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute top-1/4 left-1/4 w-32 sm:w-48 md:w-64 h-32 sm:h-48 md:h-64 bg-rose-600 rounded-full blur-3xl animate-pulse" />
         <div
           className="absolute bottom-1/3 right-1/3 w-48 sm:w-72 md:w-96 h-48 sm:h-72 md:h-96 bg-blue-600 rounded-full blur-3xl animate-pulse"
           style={{ animationDelay: "2s" }}
@@ -332,7 +332,7 @@ const TechStack: React.FC = () => {
           <div className="absolute inset-0 flex items-center justify-center scale-[0.45] sm:scale-[0.55] md:scale-[0.75] lg:scale-[0.9] xl:scale-100 transition-transform duration-500">
             {/* Core planet */}
             <div
-              className="relative z-20 w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-gradient-to-br from-space-accent to-purple-600 rounded-full flex items-center justify-center shadow-xl shadow-space-accent/30 cursor-pointer animate-pulse"
+              className="relative z-20 w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-gradient-to-br from-space-accent to-rose-600 rounded-full flex items-center justify-center shadow-xl shadow-space-accent/30 cursor-pointer animate-pulse"
               onMouseEnter={() => setActiveTech("CORE")}
               onMouseLeave={() => setActiveTech(null)}
               onFocus={() => setActiveTech("CORE")}

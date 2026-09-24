@@ -56,7 +56,7 @@ export default {
         space: {
           dark: "#0f0f12",
           blue: "#1a1a2e",
-          accent: "#6d59f0"
+					accent: "hsl(var(--space-accent))"
         }
 			},
 			borderRadius: {
@@ -94,8 +94,8 @@ export default {
           '50%': { transform: 'translateY(-10px)' }
         },
         'pulse-glow': {
-          '0%, 100%': { opacity: '1', boxShadow: '0 0 15px 0px rgba(109, 89, 240, 0.3)' },
-          '50%': { opacity: '0.8', boxShadow: '0 0 25px 4px rgba(109, 89, 240, 0.6)' }
+		  '0%, 100%': { opacity: '1', boxShadow: '0 0 15px 0px hsl(var(--space-accent) / 0.3)' },
+		  '50%': { opacity: '0.8', boxShadow: '0 0 25px 4px hsl(var(--space-accent) / 0.6)' }
         }
 			},
 			animation: {

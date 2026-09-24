@@ -40,7 +40,7 @@ const TESTIMONIALS: Testimonial[] = [
     company: "Gaza Market",
     rating: 5,
     initials: "KN",
-    avatarBg: "bg-purple-600/30 text-purple-400 border-purple-500/30",
+    avatarBg: "bg-rose-600/30 text-rose-400 border-rose-500/30",
   },
   {
     quote:

@@ -54,7 +54,7 @@ const ALL_PROJECTS: Project[] = [
       "BitLaps is a comprehensive online tutoring platform that connects students with qualified tutors, providing a seamless experience for scheduling and conducting virtual lessons.",
     tech: ["JavaScript"],
     category: "community",
-    imageGradient: "from-purple-500/20 to-indigo-600/20",
+    imageGradient: "from-rose-500/20 to-red-600/20",
     link: "https://github.com/BitLaps/BitLaps-TutorPlatform",
   },
   {

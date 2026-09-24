@@ -24,6 +24,7 @@
 
 @layer base {
   :root {
+    --space-accent: 347 77% 50%;
     --background: 0 20% 8%;
     --foreground: 0 0% 98%;
     --card: 0 20% 8%;
@@ -44,6 +45,12 @@
     --input: 0 15% 18%;
     --ring: 0 80% 70%;
     --radius: 0.5rem;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --space-accent: 345 65% 35%;
+    }
   }
 }
 
