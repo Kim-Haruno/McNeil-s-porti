@@ -4,8 +4,8 @@ import { Code2, Database, Brain, Rocket } from "lucide-react";
 const expertise = [
   {
     icon: Code2,
-    title: "Full-Stack Development",
-    desc: "End-to-end web applications with modern frameworks and robust architecture.",
+    title: "Full-Stack Applications",
+    desc: "Websites, mobile apps, and Windows applications with modern frameworks and robust architecture.",
   },
   {
     icon: Database,
@@ -79,18 +79,20 @@ const About: React.FC = () => {
                 I'm{" "}
                 <strong className="text-white">McNeil Maseko</strong>,
                 a software engineer specializing in full-stack development,
-                intelligent software systems, and modern digital experiences. I
-                build applications that combine clean design, robust
-                engineering, and practical functionality to help businesses and
-                organizations operate more efficiently.
+                mobile and Windows applications, backend APIs, intelligent
+                software systems, and modern digital experiences. I build
+                applications that combine clean design, robust engineering, and
+                practical functionality to help businesses and organizations
+                operate more efficiently.
               </p>
 
               <p className="text-sm sm:text-base">
-                Over the years, I've worked across web development, backend
-                systems, automation, databases, AI integration, and software
-                architecture. I enjoy taking ambitious ideas from concept to
-                production, ensuring every solution is scalable, maintainable,
-                and built with users in mind.
+                Over the years, I've worked across web development, mobile and
+                Windows software, backend systems and APIs, automation,
+                databases, AI integration, and software architecture. I enjoy
+                taking ambitious ideas from concept to production, ensuring
+                every solution is scalable, maintainable, and built with users
+                in mind.
               </p>
 
               <p className="text-sm sm:text-base">
