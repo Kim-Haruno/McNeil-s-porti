@@ -21,12 +21,12 @@ const Footer: React.FC = () => {
               Full-stack Web Systems Engineer
             </p>
             <p className="text-[10px] sm:text-xs text-gray-500 mt-1 max-w-xs mx-auto md:mx-0">
-              Other interests: Physicist · Hydrologist · Musician ·
-              Cybersecurity
+              Other interests: Gamer · Technophile · Cybersecurity ·
+              Electronics Repair Technician
             </p>
             <div className="flex items-center justify-center md:justify-start mt-2.5 sm:mt-3 space-x-3">
               <a
-                href="https://github.com/"
+                href="https://github.com/Kim-Haruno"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
@@ -36,7 +36,7 @@ const Footer: React.FC = () => {
                 <Github size={18} className="sm:w-5 sm:h-5" />
               </a>
               <a
-                href="https://linkedin.com/"
+                href="https://linkedin.com/in/mcneil-maseko-586716201"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
