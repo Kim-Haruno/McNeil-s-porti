@@ -66,10 +66,10 @@ const Footer: React.FC = () => {
               <span className="hidden sm:inline text-gray-600">|</span>
               <span className="sm:hidden text-gray-600">·</span>
               <a
-                href="mailto:mcneal0745516650@gmail.com"
+                href="mailto:mcneilmaseko21@gmail.com"
                 className="hover:text-white transition-colors duration-300 break-all sm:break-normal"
               >
-                mcneal0745516650@gmail.com
+                mcneilmaseko21@gmail.com
               </a>
             </div>
           </div>
