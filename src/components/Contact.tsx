@@ -63,22 +63,20 @@ const Contact: React.FC = () => {
     setSuccess(false);
 
     try {
-      const body = new URLSearchParams({
-        "form-name": "contact",
-        ...formData,
-      }).toString();
-
-      const response = await fetch("/__forms.html", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body,
+      const submission = new URLSearchParams();
+      new FormData(e.currentTarget).forEach((value, key) => {
+        submission.append(key, String(value));
       });
 
-      if (!response.ok) {
-        throw new Error(`Form submission failed with status ${response.status}`);
-      }
+      const response = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: submission.toString(),
+      });
 
-      setSuccess(true);
+      if (!response.ok) throw new Error("Netlify form submission failed");
+
+        setSuccess(true);
       setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
 
       toast({
@@ -86,7 +84,7 @@ const Contact: React.FC = () => {
         description: "Thank you for reaching out. I'll get back to you soon.",
       });
     } catch (error) {
-      console.error("Message sending error:", error);
+      console.error("Email sending error:", error);
       toast({
         title: "Message failed",
         description:
@@ -128,8 +126,17 @@ const Contact: React.FC = () => {
             <form
               ref={formRef}
               onSubmit={sendEmail}
+              name="contact"
+              method="POST"
+              data-netlify="true"
+              netlify-honeypot="bot-field"
               className="space-y-4 sm:space-y-5"
             >
+              <input type="hidden" name="form-name" value="contact" />
+              <div hidden>
+                <Label htmlFor="bot-field">Don't fill this out</Label>
+                <Input id="bot-field" name="bot-field" tabIndex={-1} autoComplete="off" />
+              </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
                 <div>
                   <Label
@@ -141,6 +148,7 @@ const Contact: React.FC = () => {
                   <Input
                     type="text"
                     id="name"
+                    name="name"
                     className="bg-white/5 border-white/10 text-white placeholder:text-gray-500 focus:ring-blue-500 focus:border-blue-500 rounded-xl h-10 sm:h-11 text-sm"
                     placeholder="Your name"
                     onChange={handleChange}
@@ -158,6 +166,7 @@ const Contact: React.FC = () => {
                   <Input
                     type="email"
                     id="email"
+                    name="email"
                     className="bg-white/5 border-white/10 text-white placeholder:text-gray-500 focus:ring-blue-500 focus:border-blue-500 rounded-xl h-10 sm:h-11 text-sm"
                     placeholder="your.email@example.com"
                     onChange={handleChange}
@@ -177,6 +186,7 @@ const Contact: React.FC = () => {
                 <Input
                   type="tel"
                   id="phone"
+                  name="phone"
                   className="bg-white/5 border-white/10 text-white placeholder:text-gray-500 focus:ring-blue-500 focus:border-blue-500 rounded-xl h-10 sm:h-11 text-sm"
                   placeholder="+27 71 523 1720"
                   onChange={handleChange}
@@ -194,6 +204,7 @@ const Contact: React.FC = () => {
                 <Input
                   type="text"
                   id="subject"
+                  name="subject"
                   className="bg-white/5 border-white/10 text-white placeholder:text-gray-500 focus:ring-blue-500 focus:border-blue-500 rounded-xl h-10 sm:h-11 text-sm"
                   placeholder="What is this regarding?"
                   onChange={handleChange}
@@ -211,6 +222,7 @@ const Contact: React.FC = () => {
                 </Label>
                 <Textarea
                   id="message"
+                  name="message"
                   rows={5}
                   className="bg-white/5 border-white/10 text-white placeholder:text-gray-500 focus:ring-blue-500 focus:border-blue-500 rounded-xl resize-none text-sm"
                   placeholder="Your message here..."
@@ -267,10 +279,10 @@ const Contact: React.FC = () => {
                       Email
                     </h4>
                     <a
-                      href="mailto:mcneilmaseko21@gmail.com"
+                      href="mailto:mcneal0745516650@gmail.com"
                       className="text-white hover:text-blue-400 font-medium transition-colors text-sm sm:text-base break-words"
                     >
-                      mcneilmaseko21@gmail.com
+                      mcneal0745516650@gmail.com
                     </a>
                   </div>
                 </div>
